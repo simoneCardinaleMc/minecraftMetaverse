@@ -11,11 +11,16 @@ export const TextureSelector = () => {
     const texture = {dirt, grass, glass, wood, log}
 
     useEffect(() => {
-
-        const pressedTexture = Object.entries().find(([k, v]) => v)[0];
-
-        if(pressedTexture) {
-            setTexture(pressedTexture[0]);
+        const textures = {
+            dirt,
+            grass,
+            glass,
+            wood,
+            log
+        }
+        const pressedTexture = Object.entries(textures).find(([k, v]) => v)
+        if (pressedTexture) {
+            setTexture(pressedTexture[0])
         }
     }, [setTexture, dirt, grass, glass, wood, log])
 
